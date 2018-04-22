@@ -1,11 +1,8 @@
 [[source]]
-
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 
-
 [packages]
-
 dj-database-url = "*"
 django = "*"
 django_heroku = "*"
@@ -13,7 +10,8 @@ gunicorn = "*"
 psycopg2 = "*"
 whitenoise = "*"
 
-
 [requires]
-
 python_version = "3.6"
+
+[dev-packages]
+pylint = "*"
