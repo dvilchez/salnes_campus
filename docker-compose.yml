@@ -1,0 +1,25 @@
+# docker-compose.yml
+version: "3.2"
+services:
+  app:
+    build:
+      context: . # Current directory!
+    networks:
+      - main  # Add the container to the network "main"
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+    command: ["./wait-for.sh", "db:5432", "--", "python3", "manage.py", "runserver", "0.0.0.0:8000"]
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: landing
+      POSTGRES_USER: django
+      POSTGRES_PASSWORD: django
+    networks:
+      - main  # Add the container to the network "main"
+networks:
+  main:
