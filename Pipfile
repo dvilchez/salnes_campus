@@ -9,6 +9,7 @@ django_heroku = "*"
 gunicorn = "*"
 psycopg2 = "*"
 whitenoise = "*"
+django-bootstrap-form = "*"
 
 [requires]
 python_version = "3.6"
